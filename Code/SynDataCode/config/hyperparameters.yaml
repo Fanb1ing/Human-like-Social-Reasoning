@@ -1,0 +1,56 @@
+# 数据路径
+DATA:
+  HUMAN_DATA_PATH: ""
+  QUESTION_JSON_PATH: "./Code/Data/Human-Data-Question-list.json"
+  QUESTION_NEW_JSON_PATH: "./Code/Data/Question-Chinese-v3-augment.json"
+  OUTPUT_DIR: "/Save/Path/"
+
+
+# Profile相关配置
+PROFILE:
+  COLUMNS: ["您的性别：", "您的年龄段：", "您的学历：", "您目前从事的职业：", "您的年收入情况："]
+
+# 邻居检索配置
+NEIGHBOR_RETRIEVAL:
+  MAX_NEIGHBORS: 15  
+  NEIGHBOR_THRESHOLD: 5  
+  REAL_RATIO_THRESHOLD: 1 
+
+# 轮次配置
+ROUNDS:
+  - round: 1
+    max_neighbors: 10
+    neighbor_threshold: 3
+    real_ratio_threshold: 1
+    use_synthetic: false
+  - round: 2
+    max_neighbors: 15
+    neighbor_threshold: 5
+    real_ratio_threshold: 0.7
+    use_synthetic: true
+  - round: 3
+    max_neighbors: 15
+    neighbor_threshold: 8
+    real_ratio_threshold: 0.8
+    use_synthetic: true
+
+# LLM API配置
+LLM:
+  API_URL: "https://dashscope.aliyuncs.com/compatible-mode/v1"
+  API_KEY: "API_KEY" 
+  MODEL: "qwen-plus"
+  MAX_TOKENS: 8296
+  TEMPERATURE: 0.7
+  TIMEOUT: 30
+  MAX_RETRIES: 3
+  RETRY_DELAY: 2
+
+# 多线程配置
+THREADING:
+  NUM_WORKERS: 5
+  QUEUE_SIZE: 100
+
+# 日志配置
+LOGGING:
+  LOG_DIR: "/data5/fanbingbing/Behave-Benchmark-RL/ICMLorKDDCode/SynData/logs"
+  LOG_LEVEL: "INFO"

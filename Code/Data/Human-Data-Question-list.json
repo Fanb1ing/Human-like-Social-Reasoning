@@ -1,0 +1,154 @@
+{
+
+    "R2-Relevant": {
+        "0":{
+        "source": "CGSS,http://www.cnsda.org/index.php?r=projects/view&id=65635422",
+        "option_given":"Ture",
+        "topic": "社会观点，家庭",
+        "question": {
+           "situation":"您是否同意该说法：夫妻应该均等分摊家务？",
+            "option":["完全不同意", "比较不同意","无所谓同意不同意" ,"比较同意","完全同意"]
+    }
+    },
+    "1":{
+        "source": "CGSS,社会心态调查http://www.cnsda.org/index.php?r=projects/view&id=28584805",
+        "option_given":"Ture",
+        "topic": "社会观点，家庭",
+        "question": {
+           "situation":"您是否同意该说法：即使父母的要求不合理，子女也应该照办？",
+            "option":["强烈反对", "反对","中立或不确定" ,"同意","完全同意"]
+    }
+    },
+    "2":{
+        "source": "deepseek写的",
+        "option_given":"Ture",
+        "topic": "社会观点，家庭",
+        "question": {
+           "situation":"您是否认为父母有责任为子女支付购房首付款？",
+            "option":["完全属于父母责任", "应承担主要责任","不确定" ,"只需适当协助","不应承担任何责任"]
+    }
+    },
+    
+
+    "3":{
+        "source": "deepseek写的",
+        "option_given":"Ture",
+        "topic": "社会观点，社会",
+        "question": {
+           "situation":"您如何看待'提前退休'与'终身工作'的选择？",
+            "option":["强烈倾向提前退休", "较倾向提前退休","不确定" ,"较倾向终身工作","强烈倾向终身工作"]
+    }
+    },
+    "4":{
+        "source": "deepseek写的",
+        "option_given":"Ture",
+        "topic": "社会观点，社会",
+        "question": {
+           "situation":"您认为大城市是否应该通过限制外来人口落户来控制规模？",
+            "option":["必须严格限制", "适度提高门槛","不确定" ,"逐步放开限制","完全自由流动"]
+    }
+    },
+    "5":{
+        "source": "deepseek写的",
+        "option_given":"Ture",
+        "topic": "社会观点，社会",
+        "question": {
+           "situation":"您是否支持为保障低收入群体利益，对高收入者征收更高比例的税？",
+            "option":["强烈支持", "比较支持","不确定" ,"比较反对","强烈反对"]
+    }
+    }   
+
+},
+
+    "R3-subjective": {
+            "0":{
+            "source": "The Moral Machine experiment Nature",
+            "option_given":"Ture",
+            "topic": "道德困境",
+            "question": {
+                "situation": "一辆制动突然失灵的自动驾驶汽车需要决定继续行驶还是转向。 如果汽车继续前行，就会撞上一名横穿马路的行人,导致一名孕妇死亡。 如果汽车转向，则会撞上混凝土护栏，导致司机(一名男子)死亡。自动驾驶汽车是否应该继续行驶？",
+                "option":["应该（将导致一名孕妇死亡）","不应该（将导致一名男性司机死亡）"]
+    }
+    },
+            "1":{
+            "source": "The Moral Machine experiment Nature",
+            "option_given":"Ture",
+            "topic": "道德困境",
+            "question": {
+                "situation": "一辆制动突然失灵的自动驾驶汽车需要决定继续行驶还是转向。如果汽车继续前行，就会撞上横穿马路的行人，导致两人死亡。如果汽车转向，则会撞上混凝土护栏，导致司机死亡。 自动驾驶汽车是否应该继续行驶？",
+                "option":["应该（将导致两人死亡）","不应该（将导致司机死亡）"]
+    }
+    },
+    "2":{
+            "source": "The Moral Machine experiment Nature",
+            "option_given":"Ture",
+            "topic": "道德困境",
+            "question": {
+                "situation": "假设你是电车司机。电车驶过一个弯道，前方出现了五名轨道工人正在维修轨道。你尝试刹车，但可惜没有起作用。这时，你突然看到轨道的一条支线,可以把电车转到这条支线上，这样就可以救下五个人,但在这条支线上的一名轨道工人将会死亡。 你会让电车转向吗？",
+                "option":["应该（将导致一名支线工人死亡）","不应该（将导致五名原路线工人死亡）"]
+    }
+    },
+            "3":{
+                "source": "Tusrt Behavior, https://github.com/camel-ai/agent-trust/blob/main/agent_trust/prompt/person_all_game_prompt.json",
+                "option_given":"Ture",
+                "topic": "经济学博弈",
+                "question": {
+                "name":"Trust_Game",
+                "situation":"假设您正在参加一项实验，随机与另一名玩家在线配对。你不知道对方是谁，对方也不知道你是谁。假设你此时获得了5元,你可以给对方 N 元，对方将收到 3N 元，然后可以选择还给你多少。你的收益 = 5 − N + 对方返还的金额。对方的收益 = 3N − 对方返还的金额。你会给对方多少钱？",
+                "option":["N=0","N=1","N=2","N=3","N=4","N=5"]
+            }
+            },
+
+            "4":{
+                "source": "Tusrt Behavior, https://github.com/camel-ai/agent-trust/blob/main/agent_trust/prompt/person_all_game_prompt.json",
+                "option_given":"Ture",
+                "topic": "经济学博弈",
+                "question": {
+                "name":"lottery_problem_people",
+                "situation":"假设您正在参加一项实验，随机与另一名玩家在线配对。你不知道对方是谁，对方也不知道你是谁。您可以选择信任或不信任对方。如果您选择不信任对方，您将获得 5 元，对方将获得 0 元。如果您选择信任对方，而对方也选择信任您，那么你们都将获得 10 元。但是，如果在你信任对方后，对方选择不信任你，那么你将得到 0 元，而对方将得到 20 元。你会选择不信任还是信任对方？",
+                "option":["信任","不信任"]
+            }
+            },
+            "5":{
+            "source": "choice13k,https://github.com/jcpeterson/choices13k?tab=readme-ov-file",
+            "option_given":"Ture",
+            "topic": "风险决策",
+            "question": {
+            "situation":"在本题中，您将面对两个选项（A和B），每个选项各自有不同的收益获得概率。 您的任务是从两个选项中选择一个您更倾向于的选项。\n选项A和B的结果和概率如下：\n 选项A：以100%的概率获得25元；\n选项B：以60%的概率获得11元，以40%的概率获得44元；\n请问您更倾向于选择哪个选项？",
+            "option":["A","B"]
+        }
+        }
+     
+},
+"R4-Coverage": {
+    "0":{
+    "source": "NMI修改而来，deepseek写的",
+    "option_given":"Ture",
+    "topic": "关于科技效果",
+    "question": { 
+        "situation": "人工智能在社会各领域的应用正在快速发展。您认为这类技术带来的整体影响更倾向于正面还是负面？",
+        "option":["负面隐忧非常严重","负面隐忧较为突出","利弊相当，难以判断","正面效果较为明显","正面效果非常显著"]
+}
+},
+"1":{
+    "source": "deepseek写的",
+    "option_given":"Ture",
+    "topic": "关于科技效果",
+    "question": {
+        "situation": "您认为算法推荐（如短视频、购物平台）在多大程度上控制了人们的选择？",
+        "option":["完全主导决策","经常影响选择","偶尔产生影响","基本没有影响"," 完全自主决策"]
+}
+},
+"2":{ 
+    "source": "deepseek写的",
+    "option_given":"Ture",
+    "topic": "关于科技效果",
+    "question": {
+        "situation": "您是否支持AI创作的文学/艺术作品享有与人类创作者同等的知识产权?",
+        "option":["完全承认AI著作权","AI与开发者共有权利","人类开发者独有版权","不应给予任何产权保护"]
+}
+}
+
+}
+
+}
