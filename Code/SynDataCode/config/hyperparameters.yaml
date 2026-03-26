@@ -52,5 +52,5 @@ THREADING:
 
 # 日志配置
 LOGGING:
-  LOG_DIR: "/data5/fanbingbing/Behave-Benchmark-RL/ICMLorKDDCode/SynData/logs"
+  LOG_DIR: "./SynData/logs"
   LOG_LEVEL: "INFO"

@@ -1,5 +1,5 @@
 ---
-base_model: /data5/fanbingbing/Behave-Benchmark-RL/Result/SFTModel/DPR1-8B-Augdata_410profile_40ques_v1-merged/
+base_model: ./SFTModel/DPR1-8B-Augdata_410profile_40ques_v1-merged/
 library_name: peft
 ---
 

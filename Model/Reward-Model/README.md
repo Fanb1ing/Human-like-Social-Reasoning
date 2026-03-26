@@ -1,5 +1,5 @@
 ---
-base_model: /data5/fanbingbing/Behave-Benchmark-RL/Data/Model/Qwen3-8B
+base_model: ./Model/Qwen3-8B
 library_name: peft
 ---
 

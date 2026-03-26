@@ -6,14 +6,13 @@ from collections import Counter
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 import numpy as np
 
-# --------- 辅助：自动选择 reward model 路径 ----------
 def find_latest_checkpoint(base_dir):
-    # 1. 优先 final dir
+   
     final_dir = os.path.join(base_dir, "trained_reward_model")
     if os.path.isdir(final_dir):
         return final_dir
 
-    # 2. 扫描子目录寻找 checkpoint
+  
     cand = []
     base_dir = os.path.join(base_dir,"reward_model")
     for name in os.listdir(base_dir):
@@ -28,7 +27,7 @@ def find_latest_checkpoint(base_dir):
 from peft import PeftModel
 from transformers import BitsAndBytesConfig
 
-BASE_MODEL_NAME="/data5/fanbingbing/Behave-Benchmark-RL/Data/Model/Qwen3-8B"
+BASE_MODEL_NAME=".Model/Qwen3-8B"
 def load_reward_model_if_exists(base_dir, base_model_name=BASE_MODEL_NAME,whether_8bit = False,device=None):
 
     path = find_latest_checkpoint(base_dir)
@@ -83,7 +82,7 @@ def load_reward_model_if_exists(base_dir, base_model_name=BASE_MODEL_NAME,whethe
     
     return tokenizer, model, path
 
-# --------- Reward 函数 1：基于 LLM 的 reward model ----------
+
 def llm_reward_function(prompts, completions, tokenizer, model, normalize=True):
     
     device = next(model.parameters()).device #?
@@ -108,9 +107,7 @@ def llm_reward_function(prompts, completions, tokenizer, model, normalize=True):
 
 # --------- Reward：rule_reward_function----------
 def thinking_answer_split(text):
-    '''
-    提取...</think> + json "选择..." 之间的内容
-    '''
+    
     if text is None:
         return "", ""
     text = str(text)
@@ -148,7 +145,7 @@ def rule_reward_function(completions, **kwargs):
     for completion in completions:
         thinking_text, answer_text = thinking_answer_split(completion)
         if thinking_text==  '':
-            # 如果提取thinking失败就是-2分
+       
             rewards.append(0)
             continue
         text_length = len(thinking_text)
@@ -200,8 +197,7 @@ def build_risk_question(sys_prompt: str, text: dict) -> str:
 
 
 import json
-# 读入json文件,并准备好题目demo_questions
-question_path =  "/data5/fanbingbing/Human-like-Social-Reasoning/Code/Data/Human-Data-Question-list.json"    
+question_path =  "./Code/Data/Human-Data-Question-list.json"    
 with open(question_path, 'r', encoding='utf-8') as f:
     questions_dict = json.load(f)
 demo_questions = []
@@ -224,7 +220,7 @@ for key,value in questions_dict.items():
         question_index += 1
 
 
-question_json_path = 'Code/Data/Augment_Question.json'
+question_json_path = './Code/Data/Augment_Question.json'
 with open(question_json_path, 'r', encoding='utf-8') as f:
         questions_dict = json.load(f)
 
@@ -309,17 +305,17 @@ def choicemap_index(answer_text,question_id):
 def answer_reward_function(prompts, completions, truths=None, question_index=None, **kwargs):
   
     rate_list = []
-    # 每一个都这样处理
+  
     for i,completion in enumerate(completions):
         thinking_text, answer_text = thinking_answer_split(completion)
         if answer_text=='':
-            # 如果提取失败就是-2分
+           
             rate_list.append(0)
             continue
         qid = question_index[i] #if question_index is not None else i
         answer_num = choicemap(answer_text, qid)
         if np.isnan(answer_num): 
-            # 如果choice不符合规定就是-1分
+        
             rate_list.append(0)
             continue
         rate_list.append(1-abs(answer_num-truths[i]))

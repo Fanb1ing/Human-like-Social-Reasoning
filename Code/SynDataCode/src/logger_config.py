@@ -2,7 +2,7 @@ import logging
 import logging.handlers
 from pathlib import Path
 
-def setup_logger(log_dir: str = "/data5/fanbingbing/Behave-Benchmark-RL/ICMLorKDDCode/SynData/logs",
+def setup_logger(log_dir: str = "./SynData/logs",
                  log_level: str = "INFO"):
     """设置日志系统"""
     
