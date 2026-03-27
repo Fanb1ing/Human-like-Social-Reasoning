@@ -158,7 +158,6 @@ def main():
 
     reward_tokenizer, reward_model, loaded_path = load_reward_model_if_exists(
         REWARD_CKPT_DIR,
-        base_model_name=BASE_MODEL,
         whether_8bit=False,
     )
     if reward_model is None:
