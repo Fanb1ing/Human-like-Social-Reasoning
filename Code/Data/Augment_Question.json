@@ -1,10 +1,8 @@
 {
     "CGSS2021": {
-        "source": "http://www.cnsda.org/index.php?r=projects/view&id=65635422",
         "number": 4,
         "option_given":"Ture",
         "human-reference":"Ture",
-        "topic": "社会态度1-7、政治参与行为与态度8-9、ISSP10-12、环境13-17",
         "question": {
         "0":{
             "situation":"您认为当今的社会公不公平？",
@@ -26,11 +24,9 @@
         },
 
     "社会心态调查2022": {
-        "source": "http://www.cnsda.org/index.php?r=projects/view&id=28584805",
         "number": 5,
         "option_given":"Ture",
         "human-reference":"Ture",
-        "topic": "民族主义,基础性政治价值观,法治意识,市场经济观念,社会公平，政治观念，中美关系",
         "question": {
             "0":{
             "situation":"您是否同意该说法：服从自己的上司或地位比自己高的人是理所当然的？",
@@ -56,7 +52,6 @@
         },
 
     "风险决策": {
-        "source": "choice13k,https://github.com/jcpeterson/choices13k?tab=readme-ov-file",
         "number": 5,
         "option_given":"Ture",
         "human-reference":"Ture",
@@ -72,10 +67,8 @@
 },
 
     "经济学博弈": {
-            "source": "Tusrt Behavior, https://github.com/camel-ai/agent-trust/blob/main/agent_trust/prompt/person_all_game_prompt.json",
             "number": 6,
             "option_given":"Ture",
-            "topic": "经济学博弈问题",
             "question": {
             "0": {
                 "name":"Dictator_Game",
@@ -112,10 +105,8 @@
 },
 
     "道德困境": {
-            "source": "Bigbench,https://github.com/google/BIG-bench/blob/main/bigbench/benchmark_tasks/moral_permissibility/task.json ",
             "number": 10,
             "option_given":"Ture",
-            "topic": "道德困境",
             "question": {
                 
                 "3": {

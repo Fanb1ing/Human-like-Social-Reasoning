@@ -7,7 +7,7 @@ from config import MODELS, MAX_RETRIES
 import os  
 from openai import OpenAI
 
-# 配置日志
+# Configure logging
 log_dir = "logs"
 os.makedirs(log_dir, exist_ok=True)
 logging.basicConfig(
@@ -17,6 +17,14 @@ logging.basicConfig(
 )
 
 class LLMClient:
+    """Thin wrapper for OpenAI-compatible chat completion APIs.
+
+    Reproducibility notes:
+    - This client only standardizes transport/retry/logging.
+    - Actual outputs depend on the remote model/provider.
+    - For more controllable runs, set temperature=0 and record model/version.
+    """
+
     def __init__(self, model_name):
         if model_name not in MODELS:
             raise ValueError(f"Unknown model: {model_name}")
@@ -59,7 +67,8 @@ class LLMClient:
                     if chunk.choices:
                         if chunk.choices[0].delta.content is not None:
                             full_content += chunk.choices[0].delta.content
-                        if  chunk.choices[0].delta.model_extra['reasoning_content'] is not None:
+                        # Some providers expose chain-of-thought under model_extra
+                        if chunk.choices[0].delta.model_extra.get('reasoning_content') is not None:
                             full_reason += chunk.choices[0].delta.model_extra['reasoning_content']
                 return full_content,full_reason
 
@@ -78,20 +87,20 @@ class LLMClient:
             return None, None
     
     def call_llm(self, prompt, temperature=0.3):
-        
-        messages = [{"role": "system", "content": "You are an assistant capable of portraying characters with specific demographic attributes and backgrounds."}]
-        messages = [{"role": "system", "content": "你是一个能够扮演具有特定人口属性背景的角色的助手。"}]
+        # NOTE: only set system prompt once (avoid accidental overwrite).
+        messages = [{
+            "role": "system",
+            "content": "你是一个能够扮演具有特定人口属性背景的角色的助手。"
+        }]
         messages.append({
             "role": "user",
             "content": prompt,	
         })
         st_time = time.time()  
         for i in range(self.max_retries):
-            # print(f"Attempts: {i+1}/{self.max_retries}")
             try:
                 response,reasoning = self.chat_once(messages,self.model_name,temp = temperature)
                 ed_time = time.time()
-                # print("Query Succuess!")
                 print(f"Query Time: {ed_time-st_time}")
                 return response, reasoning
             except Exception as e:

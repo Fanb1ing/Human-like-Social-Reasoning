@@ -1,22 +1,39 @@
-# 数据路径
+# Synthetic data generation / augmentation configuration
+
+# -----------------------------------------------------------------------------
+# DATA paths
+# -----------------------------------------------------------------------------
 DATA:
-  HUMAN_DATA_PATH: ""
+  # Path to the original human response file (CSV/XLSX supported by the loader).
+  HUMAN_DATA_PATH: "./PSRP Dataset/Human Data/Human-Data-en.xlsx"
+
+  # PSRP original questionnaire list
   QUESTION_JSON_PATH: "./Code/Data/Human-Data-Question-list.json"
-  QUESTION_NEW_JSON_PATH: "./Code/Data/Question-Chinese-v3-augment.json"
-  OUTPUT_DIR: "/Save/Path/"
 
+  # Newly augmented questions (the pool to be answered)
+  # NOTE: update this file name if you use a different augmented question set.
+  QUESTION_NEW_JSON_PATH: "./Code/Data/Augment_Question.json"
 
-# Profile相关配置
+  # Output directory for generated synthetic data
+  OUTPUT_DIR: "./outputs/syndata"
+
+# -----------------------------------------------------------------------------
+# Profile fields
+# -----------------------------------------------------------------------------
 PROFILE:
   COLUMNS: ["您的性别：", "您的年龄段：", "您的学历：", "您目前从事的职业：", "您的年收入情况："]
 
-# 邻居检索配置
+# -----------------------------------------------------------------------------
+# Neighbor retrieval (used in profile-based augmentation)
+# -----------------------------------------------------------------------------
 NEIGHBOR_RETRIEVAL:
   MAX_NEIGHBORS: 15  
   NEIGHBOR_THRESHOLD: 5  
   REAL_RATIO_THRESHOLD: 1 
 
-# 轮次配置
+# -----------------------------------------------------------------------------
+# Multi-round augmentation schedule
+# -----------------------------------------------------------------------------
 ROUNDS:
   - round: 1
     max_neighbors: 10
@@ -34,10 +51,12 @@ ROUNDS:
     real_ratio_threshold: 0.8
     use_synthetic: true
 
-# LLM API配置
+# -----------------------------------------------------------------------------
+# LLM API (OpenAI-compatible)
+# -----------------------------------------------------------------------------
 LLM:
   API_URL: "https://dashscope.aliyuncs.com/compatible-mode/v1"
-  API_KEY: "API_KEY" 
+  API_KEY: "YOUR_API_KEY"
   MODEL: "qwen-plus"
   MAX_TOKENS: 8296
   TEMPERATURE: 0.7
@@ -45,12 +64,16 @@ LLM:
   MAX_RETRIES: 3
   RETRY_DELAY: 2
 
-# 多线程配置
+# -----------------------------------------------------------------------------
+# Threading
+# -----------------------------------------------------------------------------
 THREADING:
   NUM_WORKERS: 5
   QUEUE_SIZE: 100
 
-# 日志配置
+# -----------------------------------------------------------------------------
+# Logging
+# -----------------------------------------------------------------------------
 LOGGING:
-  LOG_DIR: "./SynData/logs"
+  LOG_DIR: "./Code/SynDataCode/logs"
   LOG_LEVEL: "INFO"

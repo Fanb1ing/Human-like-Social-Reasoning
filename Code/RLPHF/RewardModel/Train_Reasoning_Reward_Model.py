@@ -1,6 +1,6 @@
 import os
 os.environ["WANDB_MODE"] = "offline"
-os.environ["CUDA_VISIBLE_DEVICES"] = "1,7" 
+os.environ["CUDA_VISIBLE_DEVICES"] = "1,2" 
 import torch
 import pandas as pd
 import numpy as np

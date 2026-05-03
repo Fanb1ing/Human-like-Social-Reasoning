@@ -2,7 +2,6 @@
 
     "R2-Relevant": {
         "0":{
-        "source": "CGSS,http://www.cnsda.org/index.php?r=projects/view&id=65635422",
         "option_given":"Ture",
         "topic": "社会观点，家庭",
         "question": {
@@ -11,7 +10,6 @@
     }
     },
     "1":{
-        "source": "CGSS,社会心态调查http://www.cnsda.org/index.php?r=projects/view&id=28584805",
         "option_given":"Ture",
         "topic": "社会观点，家庭",
         "question": {
@@ -20,7 +18,6 @@
     }
     },
     "2":{
-        "source": "deepseek写的",
         "option_given":"Ture",
         "topic": "社会观点，家庭",
         "question": {
@@ -31,7 +28,6 @@
     
 
     "3":{
-        "source": "deepseek写的",
         "option_given":"Ture",
         "topic": "社会观点，社会",
         "question": {
@@ -40,7 +36,6 @@
     }
     },
     "4":{
-        "source": "deepseek写的",
         "option_given":"Ture",
         "topic": "社会观点，社会",
         "question": {
@@ -49,7 +44,6 @@
     }
     },
     "5":{
-        "source": "deepseek写的",
         "option_given":"Ture",
         "topic": "社会观点，社会",
         "question": {
@@ -62,7 +56,6 @@
 
     "R3-subjective": {
             "0":{
-            "source": "The Moral Machine experiment Nature",
             "option_given":"Ture",
             "topic": "道德困境",
             "question": {
@@ -71,7 +64,6 @@
     }
     },
             "1":{
-            "source": "The Moral Machine experiment Nature",
             "option_given":"Ture",
             "topic": "道德困境",
             "question": {
@@ -80,7 +72,6 @@
     }
     },
     "2":{
-            "source": "The Moral Machine experiment Nature",
             "option_given":"Ture",
             "topic": "道德困境",
             "question": {
@@ -89,7 +80,6 @@
     }
     },
             "3":{
-                "source": "Tusrt Behavior, https://github.com/camel-ai/agent-trust/blob/main/agent_trust/prompt/person_all_game_prompt.json",
                 "option_given":"Ture",
                 "topic": "经济学博弈",
                 "question": {
@@ -100,7 +90,6 @@
             },
 
             "4":{
-                "source": "Tusrt Behavior, https://github.com/camel-ai/agent-trust/blob/main/agent_trust/prompt/person_all_game_prompt.json",
                 "option_given":"Ture",
                 "topic": "经济学博弈",
                 "question": {
@@ -110,7 +99,6 @@
             }
             },
             "5":{
-            "source": "choice13k,https://github.com/jcpeterson/choices13k?tab=readme-ov-file",
             "option_given":"Ture",
             "topic": "风险决策",
             "question": {
@@ -122,7 +110,6 @@
 },
 "R4-Coverage": {
     "0":{
-    "source": "NMI修改而来，deepseek写的",
     "option_given":"Ture",
     "topic": "关于科技效果",
     "question": { 
@@ -131,7 +118,6 @@
 }
 },
 "1":{
-    "source": "deepseek写的",
     "option_given":"Ture",
     "topic": "关于科技效果",
     "question": {
@@ -140,7 +126,6 @@
 }
 },
 "2":{ 
-    "source": "deepseek写的",
     "option_given":"Ture",
     "topic": "关于科技效果",
     "question": {

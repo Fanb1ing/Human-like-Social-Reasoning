@@ -3,38 +3,6 @@
   "file_name":"trained_augdata_7220_410pro_40que_v1.json", 
   "formatting": "alpaca"
   }, 
-  "Augdata_410profile_40ques_v1_woreason": {
-  "file_name":"trained_augdata_7220_410pro_40que_v1_no_reasoning.json", 
-  "formatting": "alpaca"
-  }, 
-  "Reason-Reward-10": {
-  "file_name":"top10_str.json", 
-  "formatting": "alpaca"
-  },
-  "Human-rare": {
-  "file_name":"human_rare_half_conversation.json", 
-  "formatting": "alpaca"
-  },
-  "SFT-rare": {
-  "file_name":"rare_half_conversation_SFT1557.json", 
-  "formatting": "alpaca"
-  },
-  "Qwen-Think-rare": {
-  "file_name":"rare_half_conversation_Qwen3-Plus-Think.json", 
-  "formatting": "alpaca"
-  },
-  "Qwen-rare": {
-  "file_name":"rare_half_conversation_Qwen3-Plus.json", 
-  "formatting": "alpaca"
-  },
-  "Nuanced_direct": {
-  "file_name": "trained_question_1040_direct(1400).json",
-  "formatting": "alpaca"
-  },
-  "Nuanced_think": {
-  "file_name": "trained_question_trained_human_820_think.json",
-  "formatting": "alpaca"
-  },
     "alpaca_zh_500": {
     "file_name": "alpaca_zh_500.json"
   },
