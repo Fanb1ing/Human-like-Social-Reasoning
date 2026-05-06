@@ -111,6 +111,15 @@ Pretrained adapters (if you prefer not to retrain):
 - `Model/Reward-Model/`
 - `Model/RLPHF-Model/`
 
+**Compute resources (reference)**
+
+- As a reference, our RLPHF training typically requires **2× NVIDIA A100-SXM4-80GB** and takes **~40 hours** end-to-end.
+- Example machine specification used in our runs:
+  - CPU: **AMD EPYC 7742 64-Core Processor** (2 sockets, 256 logical CPUs)
+  - GPU: **8× NVIDIA A100-SXM4-80GB** (we used 2 GPUs for RLPHF training)
+  - Memory: **~1.0 TiB RAM**
+  - Storage (visible mounts): `/` ~876G; `/data5` ~28T (others may vary by cluster)
+
 ### 3.4 Step 4: Inference (query models)
 
 #### PSRP inference
@@ -161,11 +170,18 @@ Location: `User Study/`
 - For commercial use, use in restricted environments, or sharing with third parties, contact the original data providers or project leads and obtain written permission before proceeding.
 - Please acknowledge and cite this dataset and the project in related publications, reports, or software that use the data.
 
+### 4.4 Third-party assets & compliance
+
+This repository may include or reference third-party assets. We use existing assets in accordance with their respective licenses and usage terms.
+
+- **WVS data**: we comply with the WVS data **Terms of Use** when using the related question sets / benchmarks.
+- **BeFM model**: we obtained authorization to use the released BeFM model parameters for our experiments.
+
 
 ## 5. License
 
 - **Code**: MIT License.
-- **Data**: CC BY 4.0
+- **Data**: CC BY-NC 4.0
   - `PSRP Dataset/LICENSE`
   - `User Study/LICENSE`
 
