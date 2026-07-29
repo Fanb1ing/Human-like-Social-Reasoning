@@ -1,10 +1,9 @@
 # 数据路径
 DATA:
-  HUMAN_DATA_PATH: "/data5/fanbingbing/Behave-Benchmark-RL/Data/Real_Human_V6/human_choicenum_result_104_0830_clean.csv"
-  QUESTION_JSON_PATH: "/data5/fanbingbing/Behave-Benchmark-RL/QuestionDesign/Question_json/Question-Chinese-v6.json"
-  QUESTION_NEW_JSON_PATH: "/data5/fanbingbing/Behave-Benchmark-RL/QuestionDesign/Question_json/Question-Chinese-v3-augment.json"
-  OUTPUT_DIR: "/data5/fanbingbing/Behave-Benchmark-RL/ICMLorKDDCode/SynData/llm-data-profile-augmentation/output-noretrieval/"
-
+  HUMAN_DATA_PATH: 
+  QUESTION_JSON_PATH: 
+  QUESTION_NEW_JSON_PATH: 
+  OUTPUT_DIR: 
 # 数据增强流程开关
 AUGMENTATION:
   # true: 不召回邻居，直接让LLM生成新数据（除不召回外其余流程不变）
@@ -43,7 +42,7 @@ ROUNDS:
 # LLM API配置
 LLM:
   API_URL: "https://dashscope.aliyuncs.com/compatible-mode/v1"
-  API_KEY: "sk-1b4a935030f34e0ca6f895ad2488d1cd" 
+  API_KEY:
   MODEL: "qwen-plus"
   MAX_TOKENS: 8296
   TEMPERATURE: 0.7
@@ -58,6 +57,6 @@ THREADING:
 
 # 日志配置
 LOGGING:
-  LOG_DIR: "/data5/fanbingbing/Behave-Benchmark-RL/ICMLorKDDCode/SynData/logs"
+  LOG_DIR: 
   LOG_LEVEL: "INFO"
 
