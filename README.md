@@ -1,7 +1,7 @@
 # Human-like Social Reasoning
 
 Code, data, and model adapters for our paper:
-**"Eliciting Personalized Social Reasoning in Large Language Models with Process-level Human Preference Alignment"**.
+**"Align the Reasoning, Not Just the Answer: Process-Level Human Preference Alignment for Persona-Conditioned Social Simulation"**.
 
 > Important: some experiments query third-party LLM APIs. Exact bitwise reproducibility is not guaranteed due to model/version changes and non-determinism of hosted services. We provide: prompts, inference scripts, and evaluation notebooks to reproduce the reported metrics as closely as possible.
 
